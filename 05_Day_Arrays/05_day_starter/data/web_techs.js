@@ -1,0 +1,1 @@
+const webTechs = ['Sass', 'Sas'];
