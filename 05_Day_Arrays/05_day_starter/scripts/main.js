@@ -83,15 +83,27 @@ console.log(`The first company is ${firstValue1}`);
 console.log(`The middle company is ${middleValue1}`);
 console.log(`The last company is ${lastValue1}`);
 console.log('Oppgave 10');
-itCompanies.forEach((value) => {
-    console.log(value);
+itCompanies.forEach((company) => {
+    console.log(company);
 });
 console.log('Oppgave 11');
 itCompanies.forEach((value) => {
     console.log(value.toUpperCase());
 });
 console.log('Oppgave 12');
-console.log(`${itCompanies} are big IT companies`);
+let spaceBetween = '';
+itCompanies.forEach((value, i) => {
+    if (i === itCompanies.length - 1) {
+        spaceBetween += `, ${value} are big IT companies`;
+    } else if (i === 0) {
+        spaceBetween = value;
+    } else {
+        spaceBetween += `, ${value}`;
+    }
+    console.log(value.toUpperCase());
+});
+console.log(spaceBetween);
+
 console.log('Oppgave 13');
 const indexOfCompany = itCompanies.indexOf('IBM');
 if (indexOfCompany === -1) {
@@ -100,6 +112,14 @@ if (indexOfCompany === -1) {
     console.log('This company does exist in the array');
 }
 console.log('Oppgave 14'); // jeg er helt lost
+const filteredCompanies = [];
+itCompanies.forEach((value) => {
+    const regex = value.match(/o/g);
+    if (!regex || regex.length < 2) {
+        filteredCompanies.push(value);
+    }
+});
+console.log(filteredCompanies);
 
 console.log('Oppgave 15');
 console.log(`This is a sorted list: ${itCompanies.sort()}`);
@@ -112,7 +132,7 @@ console.log(`This is the last 3 list: ${itCompanies.slice(4, 7)}`);
 console.log('Oppgave 19');
 const array19 = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'];
 const middleIndex19 = Math.floor((array19.length - 1) / 2);
-console.log(`The middle company is ${array19[middleIndex19]}`);
+console.log(`The middle company is ${array19.slice(0, middleIndex19) + array19.slice(middleIndex19 + 1)}`);
 console.log('Oppgave 20');
 array19.shift();
 console.log(array19);
@@ -175,7 +195,7 @@ console.log('Oppgave 6');
 const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux'];
 const backEnd = ['Node', 'Express', 'MongoDB'];
 const fullStack = frontEnd + ',' + backEnd;
-console.log(fullStack);
+console.log(frontEnd.concat(backEnd));
 
 console.log('\n');
 console.log('Level 3');
@@ -185,8 +205,17 @@ console.log(ages.sort());
 const min = ages[0];
 const max = ages[ages.length - 1];
 console.log(`The min age is ${min} and the max age is ${max}`);
-const median = (24 + 24) / 2;
-console.log(`The median age is ${median}`);
+function median(list) {
+    const mid = Math.floor(list.length / 2);
+    const sortedArr = list.sort((a, b) => a - b);
+
+    if (list.length % 2 === 0) {
+        return (sortedArr[mid - 1] + sortedArr[mid]) / 2;
+    } else {
+        return sortedArr[mid];
+    }
+}
+console.log(`The median age is ${median(ages)}`);
 const sum = ages.reduce((acc, current) => acc + current, 0);
 const averageAge = sum / ages.length;
 console.log(`The average age is ${averageAge}`);
@@ -220,11 +249,15 @@ if (countries.length % 2 === 0) {
     console.log(`The middle country is: ${middleCountry}`);
 }
 
-console.log('Oppgave 3'); // ikke 100% fullført
+console.log('Oppgave 3');
+let firstHalf = [];
+let secondHalf = [];
+
 if (countries.length % 2 === 0) {
-    const firstHalf = countries.slice(0, middleIndexCountries);
-    const secondHalf = countries.slice(middleIndexCountries);
+    firstHalf = countries.slice(0, middleIndexCountries);
+    secondHalf = countries.slice(middleIndexCountries);
 } else {
-    const firstHalf = countries.slice(0, middleIndexCountries + 1);
-    const secondHalf = countries.slice(middleIndexCountries + 1);
+    firstHalf = countries.slice(0, middleIndexCountries + 1);
+    secondHalf = countries.slice(middleIndexCountries + 1);
 }
+console.log(firstHalf, secondHalf);
