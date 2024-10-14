@@ -278,5 +278,66 @@ for (const tech of webTechs) {
 }
 
 console.log('Oppgave 15');
+const fruits = ['banana', 'orange', 'mango', 'lemon'];
+const reversedFruits = [];
+for (let i = fruits.length - 1; i >= 0; i--) {
+    reversedFruits.push(fruits[i]);
+}
+console.log(reversedFruits);
 
 console.log('Oppgave 16');
+const fullStack = [
+    ['HTML', 'CSS', 'JS', 'React'],
+    ['Node', 'Express', 'MongoDB'],
+];
+
+for (let i = 0; i < fullStack.length; i++) {
+    for (let j = 0; j < fullStack[i].length; j++) {
+        console.log(fullStack[i][j].toUpperCase());
+    }
+}
+console.log('\n');
+console.log('Level 3');
+console.log('Oppgave 1');
+const countriesCopy = [...countries];
+console.log(countriesCopy);
+
+console.log('Oppgave 2');
+countriesCopy.sort();
+console.log(countriesCopy);
+
+console.log('Oppgave 3');
+webTechs.sort();
+mernStack.sort();
+console.log(webTechs);
+console.log(mernStack);
+
+console.log('Oppgave 4');
+//already done
+
+console.log('Oppgave 5');
+//already done
+
+console.log('Oppgave 6');
+//already done
+
+console.log('Oppgave 7');
+const countriesWith4 = countries.filter((country) => {
+    if (country.length === 4) {
+        return country;
+    }
+});
+console.log(countriesWith4);
+
+console.log('Oppgave 8');
+const countriesWithMore = countries.filter((country) => {
+    if (country.length >= 2) {
+        return country;
+    }
+});
+console.log(countriesWithMore);
+
+console.log('Oppgave 9');
+const reversedArray = [];
+countries.reverse().forEach((c) => reversedArray.push(c.toUpperCase()));
+console.log(reversedArray);
