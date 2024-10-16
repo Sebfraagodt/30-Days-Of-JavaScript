@@ -501,10 +501,14 @@ console.log('Oppgave 11');
 console.log('Oppgave 12');
 const array312 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 function sumOfArrayItems(array) {
-    if (!array.every(Number.isFinite)) {
-        return 'Error: All array items must be numbers';
-    }
-    const sum = array.reduce((a, b) => a + b, 0);
+    let sum = 0;
+    array.forEach((element) => {
+        if (typeof element === 'number') {
+            sum += element;
+        } else {
+            console.log('Error: array contains non-numeric values');
+        }
+    });
     return sum;
 }
 console.log(sumOfArrayItems(array312));
@@ -512,14 +516,34 @@ console.log(sumOfArrayItems(array312));
 console.log('Oppgave 13');
 const array313 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 function average(array) {
-    if (!array.every(Number.isFinite)) {
-        return 'Error: All array items must be numbers';
-    }
-    const sum = array.reduce((a, b) => a + b, 0);
+    let sum = 0;
+    array.forEach((element) => {
+        if (typeof element === 'number') {
+            sum += element;
+        } else {
+            console.log('Error: array contains non-numeric values');
+        }
+    });
     const avg = sum / array.length;
     return avg;
 }
 console.log(average(array313));
+
+console.log('Oppgave 13.2');
+const array3132 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+function average(array) {
+    let sum = 0;
+    for (const element of array) {
+        if (typeof element === 'number') {
+            sum += element;
+        } else {
+            throw new Error('Error: array contains non-numeric values');
+        }
+    }
+    const avg = sum / array.length;
+    return avg;
+}
+console.log(average(array3132));
 
 console.log('Oppgave 14');
 const array314 = ['item1', 'item2', 'item3', 'iten4', 'item5'];
@@ -566,8 +590,7 @@ function isSameDataType(array) {
     if (array.length === 0) {
         return true;
     }
-    const dataType = typeof array[0];
-    return array.every((item) => typeof item === dataType);
+    return array.every((item) => typeof item === typeof array[0]);
 }
 console.log(isSameDataType(array317));
 
@@ -576,7 +599,7 @@ function isValidVariable(variableName) {
     if (typeof variableName !== 'string') {
         return false;
     }
-    const regex = /^[a-zA-Z_$][a-zA-Z_$0-9]*$/;
+    const regex = /^[a-zA-Z_$0-9]*$/;
     return regex.test(variableName);
 }
 console.log(isValidVariable('Isthisvalid$_'));
@@ -588,13 +611,10 @@ function generateUniqueRandomNumbers() {
         const randomNumber = Math.floor(Math.random() * 10);
         uniqueNumbers.add(randomNumber);
     }
-    return Array.from(uniqueNumbers);
+    return [...uniqueNumbers];
 }
 console.log(generateUniqueRandomNumbers());
 
 console.log('Oppgave 20');
-function reverseCountries(countries) {
-    const copiedArray = [...countries];
-    return copiedArray.reverse();
-}
+const reverseCountries = (countries) => [...countries].reverse();
 console.log(reverseCountries(countries));
