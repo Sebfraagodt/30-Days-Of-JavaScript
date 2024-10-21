@@ -3,14 +3,14 @@ const dog = {
     name: 'Ghia',
     age: 4,
     color: 'Brown',
-    bark: true,
+    bark: () => 'woof woof',
     breed: 'Doberman',
     getDogInfo: function () {
         return `
         Name: ${this.name}, 
         Age: ${this.age}, 
         Color: ${this.color}, 
-        Can bark: ${this.bark}, 
+        Can bark: ${this.bark()}, 
         Breed: ${this.breed}
         `;
     },
@@ -118,7 +118,8 @@ for (const user in users) {
 console.log(`These are the people that are MERN stack developers: ${mernDevelopers}`);
 
 console.log('Oppgave 4');
-const usersWithMyName = Object.assign({}, users, {
+const usersWithMyName = {
+    ...users,
     Sebastian: {
         email: 'seb@seb.com',
         skills: ['HTML', 'CSS', 'JavaScript', 'react'],
@@ -126,7 +127,7 @@ const usersWithMyName = Object.assign({}, users, {
         isLoggedIn: true,
         points: 40,
     },
-});
+};
 console.log(usersWithMyName);
 
 console.log('Oppgave 5');
@@ -333,19 +334,14 @@ function rateProduct() {
             product.ratings.push({ userId, rate });
         }
         console.log(`Rated product ${product.name} with ${rate} stars`);
-        console.log(`Ratings:`);
-        product.ratings.forEach((rating) => {
-            console.log(`  ${rating.userId}: ${rating.rate} stars`);
-        });
     } else {
         console.log(`Product with id ${productId} not found`);
     }
 }
 // rateProduct();
-console.log(products);
 
-console.log('Oppgave 3.2');
 function displayAllRatings() {
+    console.log('------------------------');
     products.forEach((product) => {
         console.log(`Product: ${product.name}`);
         if (product.ratings.length > 0) {
@@ -360,3 +356,47 @@ function displayAllRatings() {
     });
 }
 displayAllRatings();
+
+console.log('Oppgave 3.2');
+function averageRating(productId) {
+    const product = products.find((product) => product._id === productId);
+
+    if (!product) {
+        console.log(`Product with id ${productId} not found`);
+        return null;
+    }
+
+    if (product.ratings.length === 0) {
+        console.log(`No ratings found for ${product.name}`);
+        return 0;
+    }
+
+    const totalRating = product.ratings.reduce((sum, rating) => sum + rating.rate, 0);
+    const averageRate = totalRating / product.ratings.length;
+
+    console.log(`Average rating for ${product.name}: ${averageRate.toFixed(2)} stars`);
+    return averageRate;
+}
+averageRating('eedfcf');
+
+console.log('Oppgave 4');
+function likeProduct(productId, userId) {
+    const product = products.find((product) => product._id === productId);
+
+    if (!product) {
+        console.log(`Product with id ${productId} not found`);
+        return;
+    }
+    const likeIndex = product.likes.indexOf(userId);
+
+    if (likeIndex === -1) {
+        product.likes.push(userId);
+        console.log(`User ${userId} liked the product: ${product.name}`);
+    } else {
+        product.likes.splice(likeIndex, 1);
+        console.log(`User ${userId} unliked the product: ${product.name}`);
+    }
+    console.log(`${product.name} now has ${product.likes.length} likes`);
+}
+likeProduct('aegfal', 'ab12ex');
+likeProduct('aegfal', 'ab12ex');
