@@ -1,5 +1,5 @@
 console.log('Level 1');
-
+const countriesS = ['Finland', 'Sweden', 'Denmark', 'Norway', 'IceLand'];
 const countries = [
     'Austria',
     'Belgium',
@@ -41,6 +41,13 @@ console.log(
 console.log('\x1b[1mreduce\x1b[0m: kombinerer elementer i ett array og gir kun en verdi i retur');
 
 console.log('Oppgave 2');
+const callbackFunction = (el, i) => {
+    console.log(el);
+    console.log(i);
+    return el;
+};
+
+names.forEach(callbackFunction);
 
 console.log('Oppgave 3');
 countries.forEach((country) => console.log(country));
@@ -68,7 +75,7 @@ const upperCaseNames = names.map((name) => name.toUpperCase());
 console.log(upperCaseNames);
 
 console.log('Oppgave 10');
-const productPrices = products.map((product) => product.price);
+const productPrices = products.map((product) => (typeof product.price === 'number' ? product.price : 0));
 console.log(productPrices);
 
 console.log('Oppgave 11');
@@ -84,18 +91,19 @@ const countriesWithSixOrMoreLetters = countries.filter((country) => country.leng
 console.log(countriesWithSixOrMoreLetters);
 
 console.log('Oppgave 14');
-const countriesStartingWithE = countries.filter((country) => country.startsWith('E'));
+const countriesStartingWithE = countries.filter((country) => country.toLowerCase().startsWith('n'));
 console.log(countriesStartingWithE);
 
 console.log('Oppgave 15');
-const prices = [1, 2, null, 3, undefined];
-const validPrices = prices.filter((price) => price != null);
+const validPrices = products.filter((product) => {
+    if (typeof product.price === 'number') {
+        return product;
+    }
+});
 console.log(validPrices);
 
 console.log('Oppgave 16');
-function getStringLists(arr) {
-    return arr.filter((item) => typeof item === 'string');
-}
+const getStringLists = (arr) => arr.filter((item) => typeof item === 'string');
 console.log(getStringLists([1, 2, 'hej', 3, 'hei']));
 
 console.log('Oppgave 17');
@@ -103,10 +111,10 @@ const totalSum = numbers.reduce((acc, current) => acc + current, 0);
 console.log(totalSum);
 
 console.log('Oppgave 18');
-const countriesSentence = countries.reduce((acc, current, index) => {
-    return index === countries.length - 1 ? acc + ' and ' + current : acc + ', ' + current;
-}, 'Estonia, Finland, Sweden, Denmark, Norway');
-console.log(countriesSentence + ' are north European countries');
+const countriesSentence = countriesS.reduce((acc, current, index) => {
+    return index === countriesS.length - 1 ? acc + current + ' are north European countries' : acc + current + ', ';
+}, 'Estonia, ');
+console.log(countriesSentence);
 
 console.log('Oppgave 19');
 console.log('\x1b[1msome\x1b[0m: tester kun ett element i ett array om det oppfyller kravene gitt i funksjonen');
@@ -209,10 +217,10 @@ console.log([...countriesData].sort((a, b) => a.capital.localeCompare(b.capital)
 console.log([...countriesData].sort((a, b) => a.population - b.population));
 console.log('Oppgave 2');
 function mostSpokenLanguages(num) {
-    const languages = countriesData.flatMap((country) => country.languages); // makes array of languages
+    const languages = countriesData.flatMap((country) => country.languages);
     const languageCounts = languages.reduce((acc, language) => {
         if (acc[language]) {
-            acc[language] = acc[language] + 1; // create an empty object  where keys are languages and values are the language counts
+            acc[language] = acc[language] + 1;
         } else {
             acc[language] = 1;
         }
