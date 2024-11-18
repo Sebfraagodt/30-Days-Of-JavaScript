@@ -55,7 +55,7 @@ const student = {
 const studentJSON = JSON.stringify(student);
 localStorage.setItem('student', studentJSON);
 console.log(localStorage);
-console.log(JSON.parse(studentJSON));
+console.log(JSON.parse(localStorage.getItem('student')));
 
 // oppgaver level 3
 const personAccount = {

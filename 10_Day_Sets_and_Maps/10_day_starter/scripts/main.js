@@ -30,9 +30,6 @@ console.log('Oppgave 5');
 const languages = ['English', 'Finnish', 'English', 'French', 'Spanish', 'English', 'French', 'Norwegian'];
 const setOfLanguages = new Set(languages);
 console.log(setOfLanguages);
-for (const language of setOfLanguages) {
-    console.log(language);
-}
 
 console.log('Oppgave 6');
 const countryMap = new Map();

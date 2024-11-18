@@ -96,7 +96,7 @@ users.forEach(({ name, scores, skills, age }) => {
 });
 
 console.log('Oppgave 2');
-const usersWithLessThanTwoSkills = users.filter((user) => user.skills.length < 2);
+const usersWithLessThanTwoSkills = users.filter(({ skills }) => skills.length < 2);
 console.log(usersWithLessThanTwoSkills);
 
 console.log('\n');

@@ -4,6 +4,7 @@ console.table(countries);
 
 console.log('Oppgave 2');
 // er det ikke det samme?
+console.table({ countries });
 
 console.log('Oppgave 3');
 console.group('Countries');
