@@ -2,16 +2,56 @@
 <html lang="en">
 
 <head>
-	<title>30DaysOfJavaScript:23 Day: Number Generator </title>
+	<title>30DaysOfJavaScript:22 Day: Number Generator </title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+		h2, h3 {
+			text-align: center;
+			text-decoration: underline;
+		}
+		input {
+			width: 22%;
+			text-align: center;
+			display: block;
+			margin : 0 auto;
+		}
+        .number {
+            padding: 10px;
+            margin: 5px;
+			font-size: 35px;
+			font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-weight: bold;
+			min-height: auto;
+			text-align: center;
+        }
+        .even {
+            background-color: green;
+        }
+        .odd {
+            background-color: yellow;
+            color: black;
+        }
+        .prime {
+            background-color: red;
+        }
+		#numberContainer {
+			display: grid;
+			grid-template-columns: repeat(6, 1fr);
+			margin: 0 auto;
+			justify-content: center;
+			max-width: 1000px;
+		}
+    </style>
 </head>
-
 <body>
 	<h1>Number Generator</h1>
 	<h2>30DaysOfJavaScript:DOM Day 2</h2>
 	<h3>Author: Asabeneh Yetayeh</h3>
-	<div class="wrapper">
-
-	</div>
+	<input type="number" placeholder="Add amount to generate" />
+	<div id="numberContainer"></div>
 
 
 

@@ -3,10 +3,51 @@
 
 <head>
 	<title>30DaysOfJavaScript:23 Day: Keyboard Key </title>
+	<style>
+		h1 {
+			text-align: center;
+		}
+		div {
+			align-items: center;
+			background-color: white;
+			display: flex;
+			flex-direction: column;
+		}
+		#key {
+			font-family: Arial, sans-serif;
+			font-size: 70px;
+			color: green;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+			margin-bottom: 20px;
+		}
+		#code {
+			font-family: Arial, sans-serif;
+			font-size: 100px;
+			color: green;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		}
+		#keyCode {
+			font-family: Arial, sans-serif;
+			font-size: 100px;
+			color: green;
+			padding: 10px;
+			border-radius: 5px;
+			box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+		}
+	</style>
 </head>
 
 <body>
-
+	<h1>Press any key</h1>
+	<div id="output">
+		<p id="key"></p>
+        <p id="code"></p>
+        <p id="keyCode"></p>
+	</div>
 
 	<script src="./scripts/main.js"></script>
 
