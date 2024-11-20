@@ -9,7 +9,7 @@ function isPrime(num) {
 const container = document.getElementById('numberContainer');
 const amountInput = document.querySelector('input');
 
-amountInput.addEventListener('input', (e) => {
+amountInput.addEventListener('change', () => {
     container.innerHTML = '';
     const amount = parseInt(amountInput.value, 10);
 
@@ -17,10 +17,10 @@ amountInput.addEventListener('input', (e) => {
         const numberDiv = document.createElement('div');
         numberDiv.classList.add('number');
 
-        if (isPrime(i)) {
-            numberDiv.classList.add('prime');
-        } else if (i % 2 === 0) {
+        if (i % 2 === 0) {
             numberDiv.classList.add('even');
+        } else if (isPrime(i)) {
+            numberDiv.classList.add('prime');
         } else {
             numberDiv.classList.add('odd');
         }
