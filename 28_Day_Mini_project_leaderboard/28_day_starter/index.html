@@ -2,14 +2,46 @@
 <html lang="en">
 
 <head>
-	<title>30DaysOfJavaScript:11 Day </title>
+	<title>30DaysOfJavaScript: Day 28</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-	<h1>30DaysOfJavaScript:11 Day</h1>
-	<h2>Destructuring and Spread</h2>
+	<h1>30DaysOfJavaScript: Day 28</h1>
+	<h2>Leaderboard</h2>
 
-	<script src="./data/countries_data.js"></script>
+	<p>All fields are required</p>
+
+	<form id="leaderboardForm">
+        <label for="firstname">First Name:</label>
+        <input type="text" id="firstname" required><br><br>
+        
+        <label for="lastname">Last Name:</label>
+        <input type="text" id="lastname" required><br><br>
+        
+        <label for="country">Country:</label>
+        <input type="text" id="country" required><br><br>
+        
+        <label for="score">Score:</label>
+        <input type="number" id="score" required><br><br>
+        
+        <button type="submit">Add to Leaderboard</button>
+    </form>
+
+	<table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Country</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody id="leaderboardBody">
+        </tbody>
+    </table>
+
+	<button style="margin: 50px;" onClick="window.location.href=window.location.href">Refresh Page</button>
 	<script src="./scripts/main.js"></script>
 
 </body>

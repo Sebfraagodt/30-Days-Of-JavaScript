@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    justify-items: center;
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+
+p {
+    color: red;
+}
+
+.deleteButton {
+    margin: 5px;
+}
+
+.addPoints {
+    margin: 5px;
+}
+
+.removePoints {
+    margin: 5px;
+}
