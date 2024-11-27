@@ -1,0 +1,59 @@
+body {
+    justify-items: center;
+}
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 72px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    max-width: 1500px;
+    margin: 100px;
+}
+
+.dynamicDiv {
+    background-color: antiquewhite;
+    padding: 25px;
+}
+
+.buttonsDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.box {
+    padding: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(247, 246, 246);
+}
+
+.box:hover {
+    background-color: rgb(203, 203, 203);
+}
+
+#technologies {
+    font-size: 48px;
+    color: red;
+}
+
+.elementToFadeInAndOut {
+    -webkit-animation: fadeinout 4s linear forwards;
+    animation: fadeinout 4s linear forwards;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+
+@-webkit-keyframes fadeinout {
+  50% { opacity: 1; }
+}
+
+@keyframes fadeinout {
+  50% { opacity: 1; }
+}
