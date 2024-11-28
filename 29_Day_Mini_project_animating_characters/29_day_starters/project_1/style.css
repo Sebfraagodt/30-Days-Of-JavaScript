@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    transition: background-color 1s ease;
+    overflow: hidden;
+}
+
+#element {
+    font-size: 200px;
+    transition: opacity 1s linear;
+    opacity: 1;
+}
