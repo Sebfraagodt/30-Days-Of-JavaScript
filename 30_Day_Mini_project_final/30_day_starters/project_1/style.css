@@ -1,0 +1,88 @@
+body {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+header {
+    background-color: rgb(238, 238, 238);
+    padding-bottom: 12px;
+}
+
+input {
+    width: 50%;
+    height: 30px;
+    text-align: center;
+    margin: 20px;
+    color: orange;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+.topButtons {
+    background-color: orange;
+    border-radius: 20px;
+    padding: 5px;
+    width: 150px;
+    margin: 20px;
+}
+
+.topButtons:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    margin: 0 auto;
+    max-width: 80%;
+    gap: 50px;
+    padding: 20px;
+    background-color: rgb(238, 238, 238);
+    border-radius: 10px;
+}
+
+.country-card {
+    display: grid;
+    place-items: center;
+    height: auto;
+    width: 150px;
+    text-align: center;
+    padding: 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.countryFlag {
+    object-fit: contain;
+    max-width: 100%;
+    height: auto;
+}
+
+.cardName {
+    font-size: 18px;
+    color: orange;
+}
+
+#graphs {
+    background-color: rgb(238, 236, 236);
+    padding: 100px;
+    display: grid;
+    gap: 5px;
+}
+
+.country {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 100px 1fr auto;
+    height: 60px;
+    width: auto;
+    text-align: left;
+    align-items: center;
+}
+
+.bar {
+    background-color: orange;
+    height: 75%;
+}

@@ -3,10 +3,34 @@
 
 <head>
     <title>30DaysOfJavaScript:30 </title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-   
+   <header>
+    <h1>World Countries Data</h1>
+    <p id="total-countries"></p>
+    <p id="total-searchCountries"></p>
+   </header>
+   <input id="searchBar" type="text" placeholder="Search for a country here">
+   <div>
+    <button class="topButtons" id="nameSort">NAME</button>
+    <button class="topButtons" id="capitalSort">CAPITAL</button>
+    <button class="topButtons" id="populationSort">POPULATION</button>
+    <button class="topButtons" id="sortButton">SORT Z-A</button>
+    <button class="topButtons" id="scrollToGraph">GRAPH</button>
+   </div>
+   <div id="content"></div>
+
+   <div id="graphContainer">
+    <h1>TOP 10 GRAPH WORLDWIDE</h1>
+    <div>
+        <button class="topButtons" id="graphPopulationButton">Show Population</button>
+        <button class="topButtons" id="graphLanguagesButton">Show Languages</button>
+        <button class="topButtons" id="scrollToTop">SCROLL TO TOP</button>
+    </div>
+    <div  id="graphs"></div>
+   </div>
 
     <script src="./data/countries_data.js"></script>
     <script src="./scripts/main.js"></script>
